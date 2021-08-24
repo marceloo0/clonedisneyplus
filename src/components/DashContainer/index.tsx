@@ -1,0 +1,6 @@
+export { Sliders } from './Sliders'
+export { CardsTop } from './CardsTop'
+export { Trending } from './Trending'
+export { Recommends } from './Recommends'
+export { NewDisney } from './NewDisney'
+export { Originals } from './Originals'

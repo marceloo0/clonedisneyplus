@@ -1,0 +1,42 @@
+{
+  "name": "disney_plus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@react-firebase/auth": "^0.2.10",
+    "axios": "^0.21.1",
+    "firebase": "^8.10.0",
+    "js-cookie": "^3.0.0",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "storybook": "^6.3.7",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "@types/js-cookie": "^2.2.7",
+    "@types/react": "17.0.19",
+    "@types/react-slick": "^0.23.5",
+    "@types/styled-components": "^5.1.12",
+    "babel-loader": "^8.2.2",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "typescript": "4.3.5"
+  }
+}
