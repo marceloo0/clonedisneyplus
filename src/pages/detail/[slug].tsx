@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { GetStaticPaths, GetStaticProps } from 'next';
+import next, { GetStaticPaths, GetStaticProps } from 'next';
 import { Header, ButtonCircleIcon, ButtonWithIcon } from '../../components'
 import api from '../../services/api'
 
@@ -48,7 +48,7 @@ const Detail = ({ movie }: DetailProps) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const result = await api.get('fc292de1-8f71-4f87-9cdf-92a5f3bb9bc5')
-  const movies = await result?.data?.movies as MoviesProps
+  const movies = result?.data?.movies as MoviesProps
 
   const paths = Object.values(movies).map(movie => {
     return {
@@ -65,15 +65,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<DetailProps> = async ({ params }) => {
   const slug = params?.slug;
 
-  const result = await api.get('fc292de1-8f71-4f87-9cdf-92a5f3bb9bc5')
-  const movies = await result.data.movies as MoviesProps
-  const movie = Object.values(movies).filter(({ id }) => id === slug)
+    const result = await api.get('fc292de1-8f71-4f87-9cdf-92a5f3bb9bc5')
+    const movies = result.data.movies as MoviesProps
+    const movie = Object.values(movies).filter(({ id }) => id === slug)
 
-  return {
-    props: {
-      movie,
+    return {
+      props: {
+        movie,
+      }
     }
-  }
+    
 }
 
 export default Detail

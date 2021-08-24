@@ -18,7 +18,6 @@ export interface MoviesProps {
 
 type MovieContextType = {
   movies: MoviesProps[];
-  getDetailMovie: (id: string) => void;
 }
 
 type MoviesContextProviderProps = {
@@ -36,14 +35,9 @@ export function MoviesContextProvider(props: MoviesContextProviderProps) {
         setMovies(response.data.movies);
         });
   }, [])
-
-  const getDetailMovie = useCallback((id: string) => {
-    const movie = Object.values(movies).filter(item => item.id === id)
-    return movie;
-  }, [movies])
   
   return (
-    <MovieContext.Provider value={{ movies, getDetailMovie }}>
+    <MovieContext.Provider value={{ movies }}>
       {props.children}
     </MovieContext.Provider>
   );
